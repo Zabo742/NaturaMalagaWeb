@@ -16,3 +16,4 @@ Sitio web para Salón de Belleza Natura, especializado en Head Spa Premium y ser
 - Tailwind CSS para estilos
 - Radix UI para componentes accesibles
 "# NaturaMalagaWeb" 
+"# NaturaWeb" 
