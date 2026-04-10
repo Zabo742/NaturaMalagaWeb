@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 33% 96%;
+    --foreground: 30 10% 15%;
+
+    --card: 40 30% 94%;
+    --card-foreground: 30 10% 15%;
+
+    --popover: 40 33% 96%;
+    --popover-foreground: 30 10% 15%;
+
+    --primary: 82 30% 35%;
+    --primary-foreground: 40 33% 96%;
+
+    --secondary: 36 30% 88%;
+    --secondary-foreground: 30 10% 20%;
+
+    --muted: 36 20% 90%;
+    --muted-foreground: 30 8% 45%;
+
+    --accent: 40 50% 55%;
+    --accent-foreground: 30 10% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 36 20% 85%;
+    --input: 36 20% 85%;
+    --ring: 82 30% 35%;
+
+    --radius: 0.5rem;
+
+    --olive: 82 30% 35%;
+    --olive-light: 82 25% 45%;
+    --olive-dark: 82 35% 25%;
+    --cream: 40 33% 96%;
+    --cream-dark: 36 30% 88%;
+    --gold: 40 50% 55%;
+    --gold-light: 40 60% 70%;
+    --charcoal: 30 10% 15%;
+    --warm-white: 40 40% 98%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+  h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer components {
+  .font-serif-elegant {
+    font-family: 'Cormorant Garamond', serif;
+  }
+  .font-display {
+    font-family: 'Playfair Display', serif;
+  }
+  .font-body {
+    font-family: 'Inter', sans-serif;
+  }
+  .text-gold-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--gold)), hsl(var(--gold-light)));
+  }
+  .bg-olive-gradient {
+    background: linear-gradient(135deg, hsl(var(--olive-dark)), hsl(var(--olive)));
+  }
+  .section-padding {
+    @apply px-5 py-16 md:px-8 md:py-24 lg:px-16 lg:py-32;
+  }
+  .container-narrow {
+    @apply mx-auto max-w-6xl;
+  }
+}
+
+@layer utilities {
+  .animate-fade-up {
+    animation: fadeUp 0.8s ease-out forwards;
+    opacity: 0;
+  }
+  .animate-fade-up-delay-1 {
+    animation: fadeUp 0.8s ease-out 0.2s forwards;
+    opacity: 0;
+  }
+  .animate-fade-up-delay-2 {
+    animation: fadeUp 0.8s ease-out 0.4s forwards;
+    opacity: 0;
+  }
+  .animate-fade-up-delay-3 {
+    animation: fadeUp 0.8s ease-out 0.6s forwards;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background-size: 200% 100%;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--cream));
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--olive) / 0.3);
+  border-radius: 3px;
+}
